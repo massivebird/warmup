@@ -5,7 +5,7 @@
 body {
     background-color: #272729;
     color: #dadada;
-    margin: 50px auto;
+    margin: 0 auto 50px auto;
     padding: 0 30px;
     max-width: 750px;
 }
@@ -37,3 +37,4 @@ p, li, a {
     font-size: 18px;
     line-height: 28px;
 }
+
