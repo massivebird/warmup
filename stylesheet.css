@@ -6,7 +6,12 @@ body {
     background-color: #272729;
     color: #dadada;
     margin: 50px auto;
-    max-width: 700px;
+    padding: 0 30px;
+    max-width: 750px;
+}
+
+a {
+    color: #5bf;
 }
 
 h1 {
@@ -28,7 +33,7 @@ img#whatshesphere {
     float: right;
 }
 
-p, li {
+p, li, a {
     font-size: 18px;
     line-height: 28px;
 }
