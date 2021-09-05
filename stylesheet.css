@@ -24,13 +24,14 @@ h1, h2, h3 {
 }
 
 img#whatshe {
-    height: 500px;
+    height: 31.25em;
     width: 100%;
     object-fit: cover;
 }
 
 img#whatshesphere {
     float: right;
+    margin: 0 auto;
 }
 
 p, li, a {
@@ -45,4 +46,11 @@ a#lastcommit {
     margin: 0;
     text-align: right;
     text-decoration: none;
+}
+
+code {
+    all: initial;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
 }
