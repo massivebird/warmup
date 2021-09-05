@@ -9,6 +9,10 @@
 <link rel="icon" type="image/png" href="assets/whatshe-32x.png" sizes="32x32">
 <link rel="icon" type="image/png" href="assets/whatshe-96x.png" sizes="96x96">
 <link rel="icon" type="image/png" href="assets/whatshe-16x.png" sizes="16x16">
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
+<script type='text/javascript' src='http://www.google.com/jsapi'></script>
+<script type='text/javascript'></script>
+
 <title>Warmup</title>
 
 <body>
@@ -35,11 +39,6 @@
     <p>I fixed the weird indenting that VSCode was doing to my long lines of code. Turns out that the default column limit per line is 120, and once achieved, VSCode forces the excess to a new line. It made these long paragraph tags less readable in the source code. I'm glad I sorted that out.</p>
     <h2>Goals to Solve Elegantly:</h2>
     <ul>
-        <li>Pad text horizontally on mobile.
-            <ul>
-                <li>As of now, the text wraps from edge to edge on my S10. It looks terrible with the curved screen. Applying a horizontal padding to the body appears fine on Chrome but yields no effect on mobile.</li>
-            </ul>
-        </li>
         <li>Achieve surrealism while citing my inspiration.
             <ul>
                 <li>Ideally, this site remains mysterious and surreal while providing a page explaining meta information behind the site's design principles. I want this page to be accessible without interrupting the experience. Would that destroy the illusion and allure?</li>
@@ -47,9 +46,32 @@
         </li>
     </ul>
 
+    <a id="lastcommit" href="https://github.com/parrotflakes/warmup">fetching...</a>
+
 </body>
 
-<script>
+<script type="module">
+    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+
+    const octokit = new Octokit();
+
+    const url = "https://api.github.com/repos/{owner}/{repo}"
+    const response = await octokit.request("GET /repos/{owner}/{repo}", {
+        owner: "parrotflakes",
+        repo: "warmup",
+    });
+    // retrieves object of information on this particular repo
+    // now let's work with the datetime of the last commit
+
+    let datestring = response.headers["last-modified"]
+    // outputs date as string
+
+    let dateobj = new Date(datestring)
+    // outputs Date object
+
+    $(document).ready(function () {
+        document.getElementById('lastcommit').innerHTML = "Last Updated: " + dateobj.toDateString() + " " + dateobj.toLocaleTimeString('en-US') + " EST";
+    });
 </script>
 
 </html>

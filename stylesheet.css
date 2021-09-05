@@ -5,7 +5,7 @@
 body {
     background-color: #272729;
     color: #dadada;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 10px auto;
     padding: 0 30px;
     max-width: 750px;
 }
@@ -38,3 +38,11 @@ p, li, a {
     line-height: 28px;
 }
 
+a#lastcommit {
+    color: #7c7c7c;
+    display: block;
+    font-size: 10px;
+    margin: 0;
+    text-align: right;
+    text-decoration: none;
+}
